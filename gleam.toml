@@ -1,0 +1,17 @@
+name = "glotel"
+version = "0.1.0"
+
+description = "Gleam OpenTelemetry library"
+licences = ["Apache-2.0"]
+repository = { type = "github", user = "skinkade", repo = "glotel" }
+
+[dependencies]
+gleam_stdlib = ">= 0.34.0 and < 2.0.0"
+opentelemetry = ">= 1.4.0 and < 2.0.0"
+opentelemetry_exporter = ">= 1.7.0 and < 2.0.0"
+
+[dev-dependencies]
+gleeunit = ">= 1.0.0 and < 2.0.0"
+
+[erlang]
+extra_applications = ["opentelemetry_exporter", "opentelemetry"]
