@@ -3,13 +3,18 @@
 [![Package Version](https://img.shields.io/hexpm/v/glotel)](https://hex.pm/packages/glotel)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/glotel/)
 
+OpenTelemetry support for Gleam. Currently supports basic tracing functionality.
+
+Add package:
 ```sh
 gleam add glotel
 ```
 
-Currently supports basic tracing functionality.
-
-Documentation can be found at <https://hexdocs.pm/glotel>.
+Add the following to your `gleam.toml`:
+```toml
+[erlang]
+extra_applications = ["opentelemetry_exporter", "opentelemetry"]
+```
 
 ## Running an Application
 
@@ -67,13 +72,13 @@ import glotel/span
 
 pub fn foo() {
   use span_ctx <- span.new("span_name", [#("attribute", "value")])
-  ...
+  // ...
 }
 
 pub fn bar_error() {
   use span_ctx <- span.new("span_name", [])
   span.set_error_message(span_ctx, "Descriptive error message")
-  ...
+  // ...
 }
 
 pub fn baz_try_error() {
@@ -83,7 +88,7 @@ pub fn baz_try_error() {
     "Failed to baz",
     Error("Descriptive error message"),
   )
-  ...
+  // ...
 }
 ```
 
