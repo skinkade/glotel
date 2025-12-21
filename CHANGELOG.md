@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.1 - 2025-12-21
+
+- Re-add `opentelemetry_exporter` dependency (but still don't auto-start the exporter)
+
 ## v1.0.0 - 2025-12-20
 
 - Replace `opentelemetry` and `opentelemetry_exporter` dependencies with just `opentelemetry_api`
